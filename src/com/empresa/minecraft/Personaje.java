@@ -12,12 +12,12 @@ public class Personaje implements Combate {
         this.defensa = defensa;
     }
 
-    @Override
+    
     public int atacar() {
         return fuerza;
     }
 
-    @Override
+    
     public recibirAtaque(int ataque) {
         int dañoRecibido = ataque - defensa;
         salud -= dañoRecibido;

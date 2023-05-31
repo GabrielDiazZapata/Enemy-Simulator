@@ -1,3 +1,7 @@
+package com.empresa.minecraft.mob;
+
+import com.empresa.minecraft.interfaces.Combate;
+
 public abstract class MobHostil extends Mob implements Combate {
     private int fuerza;
     
@@ -11,7 +15,7 @@ public abstract class MobHostil extends Mob implements Combate {
     }
 
 
-    public recibirAtaque(int atacar){
+    public void recibirAtaque(int ataque){
         int saludActual = getSalud();
         saludActual -= ataque;
         setSalud(saludActual);

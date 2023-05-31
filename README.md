@@ -1,18 +1,19 @@
-## Getting Started
+Descripción del juego
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+El juego permite al jugador crear un personaje y enfrentarlo a enemigos hostiles. Cada personaje tiene una cantidad de salud, fuerza y defensa, y puede equiparse con armas y armaduras para aumentar sus atributos. Los enemigos también tienen su propio conjunto de atributos y habilidades de combate.
 
-## Folder Structure
+El jugador puede elegir el arma y la armadura que llevará el personaje en cada ronda. Dependiendo de las elecciones del jugador, la fuerza y defensa del personaje se verán afectadas. El objetivo del juego es derrotar a los enemigos en combate, reduciendo su salud a cero antes de que el personaje quede sin salud.
+Implementación
 
-The workspace contains two folders by default, where:
+El juego se ha implementado utilizando el lenguaje de programación Java y orientado a objetos. Se han creado las siguientes clases y interfaces:
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+    Mob: Clase abstracta que representa un mob genérico con un atributo de salud y un constructor para inicializarlo.
+    MobHostil: Clase abstracta que extiende de Mob e implementa la interfaz Combate. Define el comportamiento de los mobs hostiles, como atacar y recibir ataques.
+    MobPacifico: Clase abstracta que extiende de Mob e implementa la interfaz Daño. Define el comportamiento de los mobs pacíficos, como recibir ataques sin contraatacar.
+    Personaje: Clase que representa al personaje controlado por el jugador. Tiene atributos de salud, fuerza, defensa y métodos para atacar y recibir ataques.
+    Armadura: Enumeración que define los diferentes tipos de armas disponibles para el personaje, junto con sus valores de fuerza asociados.
+    Armadura: Enumeración que define los diferentes tipos de armaduras disponibles para el personaje, junto con sus valores de defensa asociados.
+    Combate: Interfaz que define el método atacar() para los mobs hostiles.
+    Daño: Interfaz que define el método recibirAtaque() para los mobs pacíficos.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+Además, se ha creado una clase ejecutable App que gestiona la interacción con el jugador y controla el flujo del juego.

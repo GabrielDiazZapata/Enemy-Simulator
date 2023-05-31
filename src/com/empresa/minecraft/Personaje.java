@@ -14,6 +14,14 @@ public class Personaje implements Combate {
         this.defensa = defensa;
     }
 
+    public int getSalud() {
+        return salud;
+    }
+
+    public void setSalud(int salud) {
+        this.salud = salud;
+    }
+
     
     public int atacar() {
         return fuerza;
